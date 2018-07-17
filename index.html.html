@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+		integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		
+		<style>
+			:root {
+			  --amber: #F3C83B;
+			  --dark-amber: #d8ab17;
+			  --shadow: 1px 1px 2px 2px rgba(0,0,0,0.2);
+			  --stars-background: url(https://images.pexels.com/photos/537027/pexels-photo-537027.png?cs=srgb&dl=dark-shooting-stars-stars-537027.jpg&fm=jpg);
+			}
+			
+			body {
+				margin: 0;
+			}
+			.flex-container-row {
+			  display: flex;
+			  flex-direction: row;
+			  justify-content: center;
+			  align-content: center;
+			  flex-wrap: wrap;
+			}
+			.flex-container-column {
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: center;
+			  align-content: center;
+			  flex-wrap: wrap;
+			}
+			a {
+			  text-decoration: none;
+			  color: black;
+			}
+			hr {
+			  margin: 40px 10px 20px 10px;
+			}
+			* {
+				box-sizing: border-box;
+			} 
+			
+			
+			#welcome-section{
+			  top: 0;
+			  color: white;
+			  height: 94vh;
+			  background-image: var(--stars-background);
+			  background-size: 1080px 960px;
+			}
+			#profile {
+			  margin-top: 30vh;
+			  margin-right: 5vw;
+			  padding: 0;
+			  max-width: 40vh;
+			  max-height: 40vh;
+			  border: 5px solid;
+			  border-color: var(--amber);
+			  border-radius: 50%;
+			}
+			#welcome-box {
+				margin: 40vh 2vw;
+				background-color: rgba(101,100,100,0.3);
+				border: 0px solid;
+				border-radius: 10px;
+			}
+			#title {
+			  margin-bottom: 0;
+			}
+			#intro {
+			  margin: 0;
+			  color: var(--amber);
+			}
+			.intro-box {
+				padding: 0;
+				margin: auto;
+			}
+			
+			
+			#navbar {
+				z-index: 1;
+				background-color: black;
+				margin: 0;
+				padding: 0;
+				font-size: 1.5em;
+				top: 0;
+				width: 100%;
+				height: 6vh;
+				position: -webkit-sticky;
+				position: sticky;
+			}
+			#navbar ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+			#navbar li a {
+				padding: 9px;
+				float: left;
+				display: block;
+				text-decoration: none;
+				width: 10%;
+				text-align: center;
+				color: var(--amber);
+			}
+			#navbar li a:hover {
+				background-color: var(--dark-amber);
+				color: black;
+			}
+			#name {
+				float: left;
+				margin: 1px 2vw 0 1vw;
+				padding: 5px;
+				font-family: 'Damion';
+				font-size: 1.2em;
+				text-decoration: none;
+				color: var(--amber);
+			}
+			
+			.section-name {
+				font-size: 2.5em;
+				text-align: center;
+				padding: 20px;
+				color: white;
+				font-weight: 900;
+				text-shadow: 2.5px 2.5px black;
+				margin: 0;
+			}
+			
+			
+			#about {
+				text-align: center;
+				margin: 0;
+			}
+			.icon {
+				font-size: 40px;
+			}
+			.para {
+				text-align: left;
+			}
+			#about a {
+				color: var(--amber);
+				font-weight: 700;
+			}
+			#about a:hover {
+				color: var(--dark-amber);
+				font-weight: 800;
+			}
+			.box-container {
+				padding: 10px;
+				margin: 10px;
+				background-color: white;
+				border-style: outset;
+			}
+			
+			
+			#projects {
+				background-image: var(--stars-background);
+				margin: 0;
+			}
+			.language-title {
+				text-align: center;
+				color: var(--amber);
+			}
+			.project-container {
+				background-color: var(--amber);
+				padding: 10px;
+				margin: 2vw;
+			}
+			.project-image {
+				width: 100%;
+				margin: auto;
+				z-index: -1;
+			}
+			.project-title {
+				text-align: center;
+				margin: 0;
+				padding: 5px;
+				font-size: 1.2em;
+				font-weight: 800;
+			}
+			.container {
+				position: relative;
+			}
+			.overlay {
+			  z-index: 0;
+			  position: absolute;
+			  bottom: 0;
+			  left: 0;
+			  right: 0;
+			  background-color: var(--dark-amber);
+			  overflow: hidden;
+			  width: 100%;
+			  height: 0;
+			  transition: .5s ease;
+			}
+			.project-container:hover .overlay {
+			  height: 100%;
+			}
+			.text {
+			  padding: 5px;
+			  width: 250px;
+			  height: 100%;
+			  white-space: wrap; 
+			  color: white;
+			  font-size: 16px;
+			  position: absolute;
+			  overflow: hidden;
+			  text-align: center;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  -ms-transform: translate(-50%, -50%);
+			}
+			
+			
+			#social {
+				margin: 0;
+				background-color: var(--amber);
+			}
+			.social-container {display:block;}
+			#social1{grid-area:"social1"}
+			#social2{grid-area:"social2"}
+			#social3{grid-area:"social3"}
+			.icon-big {font-size: 80px}
+			.flex-container-row-social {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				text-align: center;
+				flex-wrap: wrap;
+			}
+			
+			
+			#footer {
+				width: 100%;
+				background-color: black;
+				color: var(--amber);
+				padding: 40px;
+			}
+			#footer p {
+				margin: 0;
+				padding: 0;
+			}
+			.flex-container-row-footer{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			#version {text-align: right;}
+			
+			
+			[class*="col-"] {
+				width: 100%;
+			}
+			@media only screen and (min-width: 768px) {
+			  .col-1 {width: 8.33%;}
+			  .col-2 {width: 16.66%;}
+			  .col-3 {width: 25%;}
+			  .col-4 {width: 33.33%;}
+			  .col-5 {width: 41.66%;}
+			  .col-6 {width: 50%;}
+			  .col-7 {width: 58.33%;}
+			  .col-8 {width: 66.66%;}
+			  .col-9 {width: 75%;}
+			  .col-10 {width: 83.33%;}
+			  .col-11 {width: 91.66%;}
+			  .col-12 {width: 100%;}
+			} 
+			@media only screen and (max-width: 768px) {
+				#profile {
+					display: none;
+				}
+				#welcome-box {
+					margin: 30vh 0;
+				}
+				#title, #intro {
+					text-align: center;
+					padding: 0;
+				}
+				#navbar {
+					font-size: 12px;
+				}
+				#navbar li a{
+					width: 33.33%;
+				}
+				.grid-container{
+					grid-template-areas:
+						"social1"
+						"social2"
+						"social3";
+					text-align: left;
+				}
+				.flex-container-row-mo {
+					display: flex;
+					margin: 0;
+					padding: 0;
+					flex-direction: row;
+					padding: 2vw;
+					align-content: center;
+				}
+				.icon-big{font-size: 40px; margin-top: 1vh;}
+				.social-name{float: right; margin-left: 5vw;}
+				#footer p{text-align: center;}
+				#version {text-align: center;}
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<!-- Introduction-->
+		<section id="welcome-section" class="flex-container-row" style="background-color:black">
+			<img src ="https://github.com/carlawarde/webdesignFiles/blob/master/portrait.jpg?raw=true" alt="carla warde" id="profile">
+			<div id="welcome-box" class="flex-container-column">
+				<div style="margin: 0 5vw">
+					<h1 id="title">Hi, I'm Carla Warde</h1>
+					<p id="intro">a computer games development student</p>
+				</div>
+			</div>
+		</section>
+	  
+	  
+		<!-- Navbar-->
+		<nav id="navbar">
+			<a id="name" href="#">
+			  Carla Warde</a>
+			<ul>
+			  <li><a href ="#about">About</a></li>
+			  <li><a href="#projects">Projects</a></li>
+			  <li><a href="#social">Social</a></li>
+			</ul>
+		</nav>
+		
+		<section id="main">
+			
+			<!-- About -->
+			<section id="about" style="background-color: var(--amber)">
+				<h1 class="section-name" style="background-color: var(--dark-amber); margin: 0;">About</h1>
+				<div class="flex-container-row" style="padding: 40px 0">
+				
+					<div class="col-5">
+						<div class="box-container">
+							<h2>Who am I?</h2>
+							<p class="para">I'm a second year computer game development student at the University of Limerick, Ireland. I'm from County Mayo, however, 
+							and it was there I cultivated my love for programming. I'm always seeking new ways to broaden 
+							my programming knowledge and to, of course, challenge myself.</p>
+						</div>
+						
+						<div class="box-container">
+							<h2>Languages I have experience in?</h2>
+							
+							<div>
+								<i class="fab fa-java icon"></i>
+								<p class="para">Java is the language I have the most experience in. A years experience, to be precise. It is the language I spent my first year of college
+								learning, and as a result I have an array of projects and small demos to show for it.</p>
+							</div>
+							<div>
+								<i class="fab fa-html5 icon"></i>
+								<p class="para">This very portfolio is an example of my experience in HTML and CSS. I also have earned freeCodeCamp's Responsive Web Design certificate
+								which entails approx. 300 hours of work. You can verify this certificate <a href="https://freecodecamp.org/certification/carlawarde/responsive-web-design"
+								target="_blank">here</a>.</p>
+							</div>
+						
+						</div>
+					</div>
+					
+					<div class="col-5 box-container">
+						<h2>Other relevant skills/achievements?</h2>
+						
+						<div>
+							<h3>Team Work Skills</h3>
+							<p class="para">The majority of the projects I've undertaken in college have been group projects, particularly the programming projects. 
+							This has allowed me to develop essiential team work skills.</p>
+						</div>
+						
+						<div>
+							<h3>Leadership Skills</h3>
+							<p class="para">I was one of three class reps in my first year of college. I was a rep for over one hundred students, and this responsibility improved
+							my leadership abilties through gathering feedback from students, and communicating with lecturers.</p>
+						</div>
+						
+						<div>
+							<h3>Academic Achievements</h3>
+							<p class="para">I have received a letter of academic achievement from the President of UL for my exam results in first year for having a QCA/GPA above 3.6.
+In regards to my exam results, do feel free to get in <a href="#social">contact with me</a> if you wish to see my transcripts.</p>							
+						</div>
+						
+					</div>
+					
+				</div>
+				<div style="background-color: black; padding: 20px; margin:0;"></div>
+			</section>
+			
+
+			
+			<!-- Projects -->
+			<section id="projects">
+				<h1 class="section-name">Projects</h1>
+				
+				<div style="padding: 40px 5vw">
+					<h2 class="language-title">HTML & CSS</h2>
+					
+					<div class="flex-container-row">
+						<div class="project-container col-3">
+							<div class="container">
+								<img class="project-image" src="https://github.com/carlawarde/webdesignFiles/blob/master/product-landing-preview%20(2).PNG?raw=true" alt="project-preview">
+								<div class="overlay">
+									<div class="text">
+										<p>My first project involving flexboxes and navbars. Part of the Responsive Web Design cert.</p>
+										<a href="https://codepen.io/Carla9859/full/KBwGQL/" target="_blank">View</a>
+									</div>
+								</div>
+							</div>
+							<p class="project-title">Product Landing Page</p>							
+						</div>
+						
+						<div class="project-container col-3">
+							<div class="container">
+								<img class="project-image" src="https://github.com/carlawarde/webdesignFiles/blob/master/technical-documentation-preview%20(2).PNG?raw=true" alt="project-preview">
+								<div class="overlay">
+									<div class="text">
+										<p>This project involves a sidenavbar, and more flexboxes. Media queries are also used to make the webpage responsive. Admittedly, I have
+										yet to fill out the content of this project, but it was the layout I was more concerned with at the time. Part of 
+										the Responsive Web Design Cert</p>
+										<a href="https://codepen.io/Carla9859/full/ejNGrO/" target="_blank">View</a>
+									</div>
+								</div>
+							</div>
+							<p class="project-title">Product Landing Page</p>							
+						</div>
+						
+						<div class="project-container col-3">
+							<div class="container">
+								<img class="project-image" src="https://github.com/carlawarde/webdesignFiles/blob/master/personal-portfolio-preview%20(3).PNG?raw=true" alt="project-preview">
+								<div class="overlay">
+									<div class="text">
+										<p>The older version of my portfolio. I have made a lot of adjustments to it, improving responsiveness and the design.
+										Part of the Responsive Web Design Cert</p>
+										<a href="https://codepen.io/Carla9859/full/ajOxKP/" target="_blank">View</a>
+									</div>
+								</div>
+							</div>
+							<p class="project-title">Personal Portfolio</p>							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</section>
+			
+			<!-- Social -->
+			<section id="social">
+				<h1 class="section-name" style="background-color: var(--dark-amber)">Social</h1>
+				
+				<div class="flex-container-row-social grid-container" style="padding: 40px 0">
+					
+					<div id="social1" class="social-container flex-container-row-mo col-4">
+						<a href="https://www.freecodecamp.org/carlawarde" target="_blank" id="profile-link">
+							<i class="fab fa-free-code-camp icon-big"></i>
+							<h3 class="social-name">Free Code Camp</h3>
+						</a>
+					</div>
+					
+					<div id="social2" class="social-container flex-container-row-mo col-4">
+						<a href="https://codepen.io/Carla9859/" target="_blank">
+							<i class="fab fa-codepen icon-big"></i>
+							<h3 class="social-name">Code Pen</h3>
+						</a>
+					</div>
+					
+					<div id="social3" class="social-container flex-container-row-mo col-4">
+						<a href="mailto:carla.warde98@gmail.com" target="_blank">
+							<i class="far fa-envelope icon-big"></i>
+							<h3 class="social-name">Email</h3>
+						</a>
+					</div>
+					
+				</div>
+				
+			</section>
+			
+		</section>
+		
+		<!-- Footer -->
+		<section id="footer">
+			<div class="flex-container-row-footer">
+				<div class="col-6">
+					<p>Written and programmed by Carla Warde</p>
+					<p>All rights reserved © 2018</p>
+				</div>
+				<div class="col-6">
+					<p id="version">V. 1.00 07/18</p>
+				</div>
+			</div>
+		</section>
+		
+	</body>
+	
+</html>
