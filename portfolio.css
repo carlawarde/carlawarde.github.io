@@ -45,6 +45,8 @@
 		border: 5px solid;
 		border-color: var(--amber);
 		border-radius: 50%;
+		max-width: 40vh;
+		max-height: 40vh;
 	}
 	#welcome-box {
 		z-index: 2;
