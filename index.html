@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 	<head>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
 		integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 		<link rel="stylesheet" href="portfolio.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+    				var vheight = $(window).innerWidth();
+			});
+		</script>
 	</head>
 	
 	<body>
 	
 		<!-- Introduction-->
-		<section id="welcome-section" class="flex-container-row" style="background-color:black">
+		<section id="welcome-section" class="flex-container-row" style="background-color:black; height="vheight">
 			<div class="star s1"></div>
 		    <div class="star s2"></div>
 			<div class="star s3"></div>
