@@ -34,9 +34,8 @@
 	#welcome-section{
 		top: 0;
 		color: white;
-		height: 94vh;
 		background-image: var(--stars-background);
-		background-size: 100vw 100vh;
+		background-size: 100vw vheight;
 	}
 	#profile  {
 		z-index: 3;
