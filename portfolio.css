@@ -36,7 +36,7 @@
 		color: white;
 		height: 94vh;
 		background-image: var(--stars-background);
-		background-size: 1080px 960px;
+		background-size: 100vw 100vh;
 	}
 	#profile  {
 		z-index: 3;
