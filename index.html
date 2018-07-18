@@ -7,11 +7,12 @@
 		<link rel="stylesheet" href="portfolio.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
-			$(document).ready(function(){
+			$(function(){
     				var vheight = $(window).innerHeight();
 				vheight = vheight * 0.94;
+				var pheight = vheight * 0.4;
 				$("#welcome-section").height(vheight);
-			});
+			}
 		</script>
 	</head>
 	
@@ -24,7 +25,8 @@
 			<div class="star s3"></div>
 			<div class="star s4"></div>
 			<div class="star s5"></div>
-			<img src ="https://github.com/carlawarde/webdesignFiles/blob/master/portrait.jpg?raw=true" alt="carla warde" id="profile">
+			<img src ="https://github.com/carlawarde/webdesignFiles/blob/master/portrait.jpg?raw=true" 
+			     alt="carla warde" id="profile" style="max-width: pheight; max-height: pheight;">
 			<div id="welcome-box" class="flex-container-column">
 				<div style="margin: 0 5vw">
 					<h1 id="title">Hi, I'm Carla Warde</h1>
