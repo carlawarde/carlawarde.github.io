@@ -52,9 +52,6 @@
 	#welcome-box {
 		z-index: 2;
 		margin: 40vh 2vw;
-		background-color: rgba(101,100,100,0.3);
-		border: 0px solid;
-		border-radius: 10px;
 	}
 	#title {
 		margin-bottom: 0;
