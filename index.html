@@ -6,12 +6,17 @@
 		integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 		<link rel="stylesheet" href="portfolio.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
 		<script>
-			$(document).ready(function(){
-    				var vheight = $(window).innerHeight();
+		$(document).ready(function(){
+			if($(window).width()< 768 {
+				var vheight = $(window).innerHeight();
 				vheight = vheight * 0.94;
 				$("#welcome-section").height(vheight);
-			});
+				$("#star-background").height(vheight);
+				$("#stars").height(vheight);
+			}
+		});
 		</script>
 	</head>
 	
@@ -19,12 +24,14 @@
 	
 		<!-- Introduction-->
 		<section id="welcome-section" class="flex-container-row" style="background-color:black;">
-			<div class="star s1"></div>
-		    <div class="star s2"></div>
-			<div class="star s3"></div>
-			<div class="star s4"></div>
-			<div class="star s5"></div>
-			<img src ="https://github.com/carlawarde/webdesignFiles/blob/master/portrait.jpg?raw=true" 
+			<div id="stars">
+				<div class="star s1"></div>
+				<div class="star s2"></div>
+				<div class="star s3"></div>
+				<div class="star s4"></div>
+				<div class="star s5"></div>
+			</div>
+			<img src ="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/portrait.jpg?raw=true" 
 			     alt="carla warde" id="profile">
 			<div id="welcome-box" class="flex-container-column">
 				<div style="margin: 0 5vw">
@@ -113,12 +120,63 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 				<h1 class="section-name">Projects</h1>
 				
 				<div style="padding: 40px 5vw">
+					<h2 class="language-title">Java</h2>
+					
+					<div class="flex-container-row">
+						<div class="project-container col-3">
+							<div class="container">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/facilitiy-management-preview%20(2).PNG?raw=true" alt="project-preview">
+								<div class="overlay">
+									<div class="text">
+										<p> In the Facility Management System you can 'log-in' as an Admin, and from there you can make/edit bookings for facilities. If you log-in as a User,
+										you can view your account statements and bookings. This was my first project involving multiple classes. It also makes frequent use of text-file manipulation and Arraylists, and is well-validated by the use of try and catch blocks. 
+										Completed in a group of three.</p>
+										<a href="https://github.com/carlawarde/java-projects/tree/master/Facility%20Management%20Project" target="_blank">View</a>
+									</div>
+								</div>
+							</div>
+							<p class="project-title">Facility Management App</p>							
+						</div>
+						
+						<div class="project-container col-3">
+							<div class="container">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/league-configurator-preview%20(2).PNG?raw=true" alt="project-preview">
+								<div class="overlay">
+									<div class="text">
+										<p>In this application you can 'log-in' as an administrator and create leagues or edit existing ones that you are an admin of.
+										This project was my introduction to text file manipulation and arraylists. Completed in a group of three.</p>
+										<a href="https://github.com/carlawarde/java-projects/tree/master/League%20Configurator%20Project" target="_blank">View</a>
+									</div>
+								</div>
+							</div>
+							<p class="project-title">League Configurator App</p>							
+						</div>
+						
+						<div class="project-container col-3">
+							<div class="container">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/palindrome-preview%20(2).PNG?raw=true" alt="project-preview">
+								<div class="overlay">
+									<div class="text">
+										<p>Here you'll find exercises that were mostly completed during my programming labs. They employ an array of techniques from command line arguments
+										to JOptionPane.</p>
+										<a href="https://github.com/carlawarde/java-projects/tree/master/Other%20Projects" target="_blank">View</a>
+									</div>
+								</div>
+							</div>
+							<p class="project-title">Other Java Projects</p>							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div style="padding: 40px 5vw">
 					<h2 class="language-title">HTML & CSS</h2>
 					
 					<div class="flex-container-row">
 						<div class="project-container col-3">
 							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/webdesignFiles/blob/master/product-landing-preview%20(2).PNG?raw=true" alt="project-preview">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/product-landing-preview%20(2).PNG?raw=true" alt="project-preview">
 								<div class="overlay">
 									<div class="text">
 										<p>My first project involving flexboxes and navbars. Part of the Responsive Web Design cert.</p>
@@ -131,7 +189,7 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 						
 						<div class="project-container col-3">
 							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/webdesignFiles/blob/master/technical-documentation-preview%20(2).PNG?raw=true" alt="project-preview">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/technical-documentation-preview%20(2).PNG?raw=true" alt="project-preview">
 								<div class="overlay">
 									<div class="text">
 										<p>This project involves a sidenavbar, and more flexboxes. Media queries are also used to make the webpage responsive. Admittedly, I have
@@ -141,15 +199,16 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 									</div>
 								</div>
 							</div>
-							<p class="project-title">Product Landing Page</p>							
+							<p class="project-title">Technical Documentation Page</p>							
 						</div>
 						
 						<div class="project-container col-3">
 							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/webdesignFiles/blob/master/personal-portfolio-preview%20(3).PNG?raw=true" alt="project-preview">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/personal-portfolio-preview%20(3).PNG?raw=true" alt="project-preview">
 								<div class="overlay">
 									<div class="text">
-										<p>The older version of my portfolio. I have made a lot of adjustments to it, improving responsiveness and the design.
+										<p>The older version of my portfolio. I have made a lot of adjustments to it since then, 
+										improving the overall responsiveness and the design.
 										Part of the Responsive Web Design Cert</p>
 										<a href="https://codepen.io/Carla9859/full/ajOxKP/" target="_blank">View</a>
 									</div>
@@ -212,7 +271,7 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 					<p>All rights reserved © 2018</p>
 				</div>
 				<div class="col-6">
-					<p id="version">V. 1.04 18/07/18</p>
+					<p id="version">V. 1.24 19/07/18</p>
 				</div>
 			</div>
 		</section>
