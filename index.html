@@ -15,6 +15,14 @@
 				vheight = vheight * 0.94;
 				$("#welcome-section").height(vheight);
 			}
+			$('a[href^="#"]').click(function(event) {
+				var id = $(this).attr("href");
+				var offset = 40;
+				var target = $(id).offset().top - offset;
+				$('html, body').animate({scrollTop:target}, 400);
+
+				event.preventDefault();
+			});
 		});
 		</script>
 	</head>
@@ -55,7 +63,7 @@
 		<section id="main">
 			
 			<!-- About -->
-			<section id="about" style="background-color: var(--amber)">
+			<section id="about" style="background-color: var(--amber)" class="anchor">
 				<h1 class="section-name" style="background-color: var(--dark-amber); margin: 0;">About</h1>
 				<div class="flex-container-row" style="padding: 40px 0">
 				
@@ -115,7 +123,7 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 
 			
 			<!-- Projects -->
-			<section id="projects">
+			<section id="projects" class="anchor">
 				<h1 class="section-name">Projects</h1>
 				<p id="mobile-info">Click on the project preview to see more information!</p>
 				
@@ -176,11 +184,14 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 					<div class="flex-container-row">
 						<div class="project-container col-3">
 							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/product-landing-preview%20(2).PNG?raw=true" alt="project-preview">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/product-landing-v2-preview.PNG?raw=true" alt="project-preview">
 								<div class="overlay">
 									<div class="text">
-										<p>My first project involving flexboxes and navbars. Part of the Responsive Web Design cert.</p>
-										<a href="https://codepen.io/Carla9859/full/KBwGQL/" target="_blank">View</a>
+										<p>Two versions of this project exist. The preview is of the newer version which makes
+										use of flexbox, media queries and jQuery. I'd like to think it's a major step up from the older version. (There's approx. 2 weeks 
+										between them.) Both versions are available as a comparison.</p>
+										<a href="https://codepen.io/Carla9859/full/KBwGQL/" target="_blank">View older version</a><br>
+										<a href="https://codepen.io/Carla9859/full/mjRrvq/" target="_blank">View newer version</a>
 									</div>
 								</div>
 							</div>
@@ -189,13 +200,13 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 						
 						<div class="project-container col-3">
 							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/technical-documentation-preview%20(2).PNG?raw=true" alt="project-preview">
+								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/technical-documentation-v2-preview.PNG?raw=true" alt="project-preview">
 								<div class="overlay">
 									<div class="text">
-										<p>This project involves a sidenavbar, and more flexboxes. Media queries are also used to make the webpage responsive. Admittedly, I have
-										yet to fill out the content of this project, but it was the layout I was more concerned with at the time. Part of 
-										the Responsive Web Design Cert</p>
-										<a href="https://codepen.io/Carla9859/full/ejNGrO/" target="_blank">View</a>
+										<p>Two versions of this project also exist, but the overall change is less drastic than the Product Landing Page. 
+										I made improvements to the overall design and responsiveness. It makes use of jQuery, media queries, flexbox and CSS tables.</p>
+										<a href="https://codepen.io/Carla9859/full/ejNGrO/" target="_blank">View older version</a><br>
+										<a href="https://codepen.io/Carla9859/full/qyXvBb/" target="_blank">View newer version</a>
 									</div>
 								</div>
 							</div>
@@ -224,7 +235,7 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 			</section>
 			
 			<!-- Social -->
-			<section id="social">
+			<section id="social" class="social">
 				<h1 class="section-name" style="background-color: var(--dark-amber)">Social</h1>
 				
 				<div class="flex-container-row-social grid-container" style="padding: 40px 0">
@@ -279,7 +290,7 @@ In regards to my exam results, do feel free to get in <a href="#social">contact 
 					<p>All rights reserved © 2018</p>
 				</div>
 				<div class="col-6">
-					<p id="version">V. 1.24 19/07/18</p>
+					<p id="version">V 2.0 28/07/18</p>
 				</div>
 			</div>
 		</section>
