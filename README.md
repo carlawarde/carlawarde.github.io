@@ -1,5 +1,5 @@
 # Portfolio
 
-<p>Hey guys, welcome to my portfolio! This is my first time creating a full web-page from scratch so if you have any tips or suggestions I'd love to hear them </p>
+<p>This portfolio is a work in progress and will be continuously updated overtime. Any (constructive) feedback and tips will be much appreciated!</p>
 
-<p>carlawarde.github.io</p>
+<h6>Designed and programmed by Carla Warde</h6>
