@@ -258,10 +258,9 @@
 		background-color: var(--amber);
 	}
 	.social-container {display:block;}
-	#social1{grid-area:"social1"}
-	#social2{grid-area:"social2"}
-	#social3{grid-area:"social3"}
-	.icon-big {font-size: 80px}
+	
+	.icon-big {font-size: 60px}
+	
 	.flex-container-row-social {
 		display: flex;
 		flex-direction: row;
@@ -387,7 +386,8 @@
 				"social1"
 				"social2"
 				"social3"
-				"social4";
+				"social4"
+				"social5";
 			text-align: left;
 		}
 		.flex-container-row-mo {
