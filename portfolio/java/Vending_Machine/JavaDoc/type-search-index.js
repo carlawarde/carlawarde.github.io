@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"<Unnamed>","l":"Coin"},{"p":"<Unnamed>","l":"Product"},{"p":"<Unnamed>","l":"ReadWrite"},{"p":"<Unnamed>","l":"VendingException"},{"p":"<Unnamed>","l":"VendingMachine"},{"p":"<Unnamed>","l":"VendingMachineCLI"},{"p":"<Unnamed>","l":"VendingMachineGUI"},{"p":"<Unnamed>","l":"VendingMachineMenu"},{"p":"<Unnamed>","l":"VendingMachineSimulation"}]
