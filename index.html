@@ -1,310 +1,290 @@
 <!DOCTYPE html>
-	<head>
+<html lang="en">
+    <head>
+	
+		<title>Carla Warde</title>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Cousine|Roboto+Condensed&amp;subset=latin-ext" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
 		integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-		<link rel="stylesheet" href="portfolio.css">
-		<link rel="icon" type="image/png" href="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/favicon-32x32.png?raw=true" sizes="32x32" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
 		
 		<script>
-		$(document).ready(function(){
-			if($(window).width()< 768) {
-				var vheight = $(window).height();
-				vheight = vheight * 0.94;
-				$("#welcome-section").height(vheight);
-			}
-			$('a[href^="#"]').click(function(event) {
-				var id = $(this).attr("href");
-				var offset = 40;
-				var target = $(id).offset().top - offset;
-				$('html, body').animate({scrollTop:target}, 400);
+			
+			$(document).ready(function(){	
+				/*
+					Checks if the device is less than 992px wide and changes the variable based on this
+				*/
+				var mobile_or_tablet = false;
+				if($(window).width()< 992) {
+					mobile_or_tablet = true;
+				}
+				
+				/* 	
+					Function that locks the height of the landing page and navbar on mobile and tablet devices when the page initially loads. 
+					This is to stop a 'jump' when the user's browser UI changes the viewport height when the user scrolls.
+				*/
+				if(mobile_or_tablet) {
+					var vheight = $(window).height();
+					$("#navbar").height(vheight * 0.06);
+					vheight = vheight * 0.94;
+					$("#landing-page").height(vheight);
+				}
+				
+				/*
+					This function handles when mobile/tablet users change their screen orientation so the landing page and navbar will resize accordingly.
+				*/
+				$(window).resize(function(){
+					if(mobile_or_tablet) {
+						var vheight = $(window).height();
+						$("#navbar").height(vheight * 0.06);
+						vheight = vheight * 0.94;
+						$("#landing-page").height(vheight);
+					}
+				}
+				
+				/* 
+					smoothscroll function that is currently not working even though it worked before I started using bootstrap -_-
+				
+				$('.nav-link').click(function(event) {
+					var id = $(this).attr("href");
+					var offset = 80;
+					var target = $(id).offset().top - offset;
+					$('html, body').animate({scrollTop:target}, 400);
 
-				event.preventDefault();
+					event.preventDefault();
+				}); */
 			});
-		});
 		</script>
+		
 	</head>
+	
 	
 	<body>
 	
-		<!-- Introduction-->
-		<section id="welcome-section" class="flex-container-row" style="background-color:black;">
-			<div style="height: 100%">
+		<!-- Introduction -->
+		<section id="landing-page" class="container-fluid">
+		
+			<div>
 				<div class="star s1"></div>
 				<div class="star s2"></div>
 				<div class="star s3"></div>
 				<div class="star s4"></div>
 				<div class="star s5"></div>
 			</div>
-			<img src ="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/portrait.jpg?raw=true" 
-			     alt="carla warde" id="profile">
-			<div id="welcome-box" class="flex-container-column">
-				<div style="margin: 0 5vw">
-					<h1 id="title">Hi, I'm Carla Warde</h1>
-					<p id="intro">a computer games development student</p>
+		
+			<div class="text-center" style="padding: 38vh">
+				<h1>
+					Hi, I'm Carla Warde
+				</h1>
+				<p class="amber-text">
+					a 3rd year computer games development student
+				</p>
+			</div>
+			
+		</section>
+		
+		
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand sticky-top">
+			<a class="navbar-brand" href="#">
+				<img src="images/favicon-32x32.png" alt="logo" style="width: 32px">
+			</a>
+			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#about">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#projects">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#social">Social</a>
+				</li>
+			</ul>
+		</nav>
+		
+		
+		<!-- About -->
+		<section id="about">
+			<h2 class="text-center section-title p-3">About</h2>
+			<div class="container-fluid p-3">
+				<div class="row">
+					<div class="col-md-6 col-lg-4 p-3">
+						<div class="mx-auto portrait-div">
+							<img src="./images/portrait.jpg" class="rounded-circle img-fluid portrait" alt="carla-warde-portrait">
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-8 p-3">
+					
+						<div class="p-1">
+							<h3>Who am I?</h3>
+							<p>
+								I'm a third year Computer Game Development student at the University of Limerick, Ireland. 
+								I have had a love for gaming since I was small, and this has transitioned
+								into a passion for programming that took off in 2014.
+							</p>
+							<p>
+								Outside of programming and gaming, you can find me reading and sometimes even writing stories of my own! 
+								I also love kayaking and am a member of the kayaking club in my university.
+							</p>
+							<p>
+								I am primarily based in Mayo/Limerick, but am willing to relocate. I will be undertaking a co-operative education 
+								placement from January 2020 to August 2020. Although I am a game development student, I am also very much interested in software engineering and a variety of roles that are
+								not restricted game development. If you're interested in taking on an intern during this period of time please do feel free to contact me if you wish to see my CV!
+							</p>
+						</div>
+						
+						<div class = "p-1">
+							<h3>Education</h3>
+							<p>
+								<strong>University of Limerick</strong> - Limerick, Ireland<br>2017-2021, BSc in Computer Games Development
+								<ul>
+									<li>Current Grade Level: First Class Honours</li>
+									<li>Key Subjects: Computer Science, Object Orientated Development, Algorithms & Data Structures, Event Driven Programming</li>
+								</ul>
+							</p>
+							<p>
+								<strong>FreeCodeCamp</strong><br>2018, Responsive Web Design Certificate
+								<a href="images/fcc-web-design-cert.png" target="_blank"><i class="fas fa-link"></i></a>
+							</p>
+						</div>
+						
+						<div class="p-1">
+							<h3>Technical Skills</h3>
+							<div>
+								<ul>
+									<li>Proficient: Java, HTML/CSS, Bootstrap</li>
+									<li>Familiar: Git, C++, C, MySQL</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
-	  
-	  
-		<!-- Navbar-->
-		<nav id="navbar">
-			<a id="name" href="#">
-			  Carla Warde</a>
-			<ul>
-			  <li><a href ="#about">About</a></li>
-			  <li><a href="#projects">Projects</a></li>
-			  <li><a href="#social">Social</a></li>
-			</ul>
-		</nav>
-
-		<section id="main">
-			
-			<!-- About -->
-			<section id="about" style="background-color: var(--amber)" class="anchor">
-				<h1 class="section-name" style="background-color: var(--dark-amber); margin: 0;">About</h1>
-				<div class="flex-container-row" style="padding: 40px 0">
+		
+		
+		<!-- Projects -->
+		<section id="projects">
+			<h2 class="text-center section-title p-3">Projects</h2>
+			<div class="container-fluid p-3 text-center">
+				<div class="d-flex flex-wrap justify-content-md-between justify-content-sm-center">
 				
-					<div class="col-5">
-						<div class="box-container">
-							<h2>Who am I?</h2>
-							<p class="para">I'm a second year Computer Game Development student at the University of Limerick, Ireland. I'm from County Mayo however, 
-							and it was there I cultivated my love for programming. I'm always seeking new ways to broaden 
-							my programming knowledge and to, of course, challenge myself.</p>
-						</div>
-						
-						<div class="box-container">
-							<h2>Programming languages I have experience in?</h2>
-							
-							<div>
-								<i class="fab fa-java icon"></i>
-								<p class="para">Java is the language I have the most experience in. A years experience, to be precise. It is the language I spent my first year of college
-								learning, and as a result I have an array of projects and small demos to show for it.</p>
+					<div>
+						<div class="project-card card">
+							<img class="card-img-top project-preview" src="./images/project_previews/a_star_algorithm_preview.png" alt="project_preview">
+							<div class="card-body">
+								<h4 class="card-title p-1">A* Algorithm</h4>
+								<p class="card-text p-1">Utilised: Java, OOP, Heuristics, CLI</p>
+								<a href="https://github.com/carlawarde/projects/tree/master/java/a_star_algorithm" target="_blank" class="btn border border-dark project-btn stretched-link">See Code</a>
 							</div>
-							<div>
-								<i class="fab fa-html5 icon"></i><i class="fab fa-css3-alt icon"></i>
-								<p class="para">This very portfolio is an example of my experience in HTML and CSS. I also have earned freeCodeCamp's Responsive Web Design certificate
-								which entails approx. 300 hours of work. You can verify this certificate <a href="https://freecodecamp.org/certification/carlawarde/responsive-web-design"
-								target="_blank">here</a>.</p>
-							</div>
-						
 						</div>
 					</div>
 					
-					<div class="col-5 box-container">
-						<h2>Other relevant skills/achievements?</h2>
-						
-						<div>
-							<h3>Team Work Skills</h3>
-							<p class="para">The majority of the projects I've undertaken in college have been group projects, particularly the programming projects. 
-							This has allowed me to develop essiential team work skills.</p>
+					<div>
+						<div class="project-card card">
+							<img class="card-img-top project-preview" src="./images/project_previews/vending_machine_project_preview.png" alt="project_preview">
+							<div class="card-body">
+								<h4 class="card-title p-1">Vending Machine App</h4>
+								<p class="card-text p-1">Utilised: Java, JavaFX, OOP, Text-File Manipulation, CLI</p>
+								<a href="https://github.com/carlawarde/projects/tree/master/java/vending_machine_project" target="_blank" class="btn border border-dark project-btn stretched-link">See Code</a>
+							</div>
 						</div>
-						
-						<div>
-							<h3>Leadership Skills</h3>
-							<p class="para">I've been a class rep for two years now, and that responsibility of being the line of communication between my fellow students and my lecturers has taught me a lot about leadership. 
-								I'm also part of the voluntary Student Leader initiative at UL which involves a peer leadership structure to help first years transition into their programme. 
-								As a second year student, I've been assigned a group of five first years from my programme to mentor and help them adapt. Similarly to being a class rep, being responsible for other people, particularly those younger than me, has improved my leadership skills.</p>
+					</div>
+					
+					<div>
+						<div class="project-card card">
+							<img class="card-img-top project-preview" src="" alt="project_preview">
+							<div class="card-body">
+								<h4 class="card-title p-1">Other Projects</h4>
+								<p class="card-text p-1"><!--A more extensive list of my projects can be found here--> Coming soon!</p>
+								<a href="#projects" class="btn border-dark project-btn">See Code</a>
+							</div>
 						</div>
-						
-						<div>
-							<h3>Academic Achievements</h3>
-							<p class="para">I have received two letters of academic achievement from the President of UL for my exam results in first year for having a QCA/GPA above 3.6.
-In regards to my exam results, do feel free to get in <a href="#social">contact with me</a> if you wish to see my transcripts.</p>							
-						</div>
-						
 					</div>
 					
 				</div>
-				<div style="background-color: black; padding: 20px; margin:0;"></div>
-			</section>
-			
-
-			
-			<!-- Projects -->
-			<section id="projects" class="anchor">
-				<h1 class="section-name">Projects</h1>
-				<p id="mobile-info">Click on the project preview to see more information!</p>
-				
-				<div style="padding: 40px 5vw">
-					<h2 class="language-title">Java</h2>
-					
-					<div class="flex-container-row">
-						<div class="project-container col-3">
-							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/facilitiy-management-preview%20(2).PNG?raw=true" alt="project-preview">
-								<div class="overlay">
-									<div class="text">
-										<p> In the Facility Management System you can 'log-in' as an Admin, and from there you can make/edit bookings for facilities. If you log-in as a User,
-										you can view your account statements and bookings. This was my first project involving multiple classes. It also makes frequent use of text-file manipulation and Arraylists, and is well-validated by the use of try and catch blocks. 
-										Completed in a group of three.</p>
-										<a href="https://github.com/carlawarde/projects/tree/master/java/facility_management_application" target="_blank">View</a>
-									</div>
-								</div>
-							</div>
-							<p class="project-title">Facility Management App</p>							
-						</div>
-						
-						<div class="project-container col-3">
-							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/league-configurator-preview%20(2).PNG?raw=true" alt="project-preview">
-								<div class="overlay">
-									<div class="text">
-										<p>In this application you can 'log-in' as an administrator and create leagues or edit existing ones that you are an admin of.
-										This project was my introduction to text file manipulation and arraylists. Completed in a group of three.</p>
-										<a href="https://github.com/carlawarde/projects/tree/master/java/sports_league_configuration_project" target="_blank">View</a>
-									</div>
-								</div>
-							</div>
-							<p class="project-title">League Configurator App</p>							
-						</div>
-						
-						<div class="project-container col-3">
-							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/palindrome-preview%20(2).PNG?raw=true" alt="project-preview">
-								<div class="overlay">
-									<div class="text">
-										<p>Here you'll find exercises that were mostly completed during my programming labs. They employ an array of techniques from command line arguments
-										to JOptionPane.</p>
-										<a href="https://github.com/carlawarde/projects/tree/master/java/other_programs" target="_blank">View</a>
-									</div>
-								</div>
-							</div>
-							<p class="project-title">Other Java Projects</p>							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div style="padding: 40px 5vw">
-					<h2 class="language-title">HTML & CSS</h2>
-					
-					<div class="flex-container-row">
-						<div class="project-container col-3">
-							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/product-landing-v2-preview.PNG?raw=true" alt="project-preview">
-								<div class="overlay">
-									<div class="text">
-										<p>Two versions of this project exist. The preview is of the newer version which makes
-										use of flexbox, media queries and jQuery. I'd like to think it's a major step up from the older version. (There's approx. 2 weeks 
-										between them.) Both versions are available as a comparison.</p>
-										<a href="https://codepen.io/Carla9859/full/KBwGQL/" target="_blank">View older version</a><br>
-										<a href="https://codepen.io/Carla9859/full/mjRrvq/" target="_blank">View newer version</a>
-									</div>
-								</div>
-							</div>
-							<p class="project-title">Product Landing Page</p>							
-						</div>
-						
-						<div class="project-container col-3">
-							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/technical-documentation-v2-preview.PNG?raw=true" alt="project-preview">
-								<div class="overlay">
-									<div class="text">
-										<p>Two versions of this project also exist, but the overall change is less drastic than the Product Landing Page. 
-										I made improvements to the overall design and responsiveness. It makes use of jQuery, media queries, flexbox and CSS tables.</p>
-										<a href="https://codepen.io/Carla9859/full/ejNGrO/" target="_blank">View older version</a><br>
-										<a href="https://codepen.io/Carla9859/full/qyXvBb/" target="_blank">View newer version</a>
-									</div>
-								</div>
-							</div>
-							<p class="project-title">Technical Documentation Page</p>							
-						</div>
-						
-						<div class="project-container col-3">
-							<div class="container">
-								<img class="project-image" src="https://github.com/carlawarde/carlawarde.github.io/blob/master/images/personal-portfolio-preview%20(3).PNG?raw=true" alt="project-preview">
-								<div class="overlay">
-									<div class="text">
-										<p>The older version of my portfolio. I have made a lot of adjustments to it since then, 
-										improving the overall responsiveness and the design.
-										Part of the Responsive Web Design Cert</p>
-										<a href="https://codepen.io/Carla9859/full/ajOxKP/" target="_blank">View</a>
-									</div>
-								</div>
-							</div>
-							<p class="project-title">Personal Portfolio</p>							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-			</section>
-			
-			<!-- Social -->
-			<section id="social" class="social">
-				<h1 class="section-name" style="background-color: var(--dark-amber)">Social</h1>
-				
-								<div class="flex-container-row-social" style="padding: 2% 0">
-					
-					<div id="social1" class="social-container flex-container-row-mo col-2">
-						<a href="https://www.freecodecamp.org/carlawarde" target="_blank" id="profile-link">
-							<div class="social-box">
-								<i class="fab fa-free-code-camp icon-big"></i>
-								<h3 class="social-name">Free Code Camp</h3>
-							</div>
-						</a>
-					</div>
-					
-					<div id="social2" class="social-container flex-container-row-mo col-2">
-						<a href="https://codepen.io/Carla9859/" target="_blank">
-							<div class="social-box">
-								<i class="fab fa-codepen icon-big"></i>
-								<h3 class="social-name">Code Pen</h3>
-							</div>
-						</a>
-					</div>
-					
-					<div id="social3" class="social-container flex-container-row-mo col-2">
-						<a href="mailto:carlawarde30@gmail.com" target="_blank">
-							<div class="social-box">
-								<i class="far fa-envelope icon-big"></i>
-								<h3 class="social-name">Email</h3>
-							</div>
-						</a>
-					</div>
-					
-					<div id="social4" class="social-container flex-container-row-mo col-2">
-						<a href="https://github.com/carlawarde" target="_blank">
-							<div class="social-box">
-								<i class="fab fa-github icon-big"></i>
-								<h3 class="social-name">Github</h3>
-							</div>
-						</a>
-					</div>
-					
-					<div id="social5" class="social-container flex-container-row-mo col-2">
-						<a href="https://www.linkedin.com/in/carla-warde/" target="_blank">
-							<div class="social-box">
-								<i class="fab fa-linkedin icon-big"></i>
-								<h3 class="social-name">LinkedIn</h3>
-							</div>
-						</a>
-					</div>
-					
-				</div>
-				
-			</section>
-			
+			</div>
 		</section>
+		
+		
+		<!-- Social -->
+		<section id="social">
+			<h2 class="text-center section-title p-3">Social</h2>
+			<div class="container-fluid p-3 text-center">
+				<div class="row p-3 mx-auto">
+					<div class="col-1"></div>
+					<div class="col-2">
+						<a href="https://www.linkedin.com/in/carla-warde/" target="_blank">
+							<div>
+								<i class="fab fa-linkedin icon-big"></i>
+								<h4 class="social-name">LinkedIn</h4>
+							</div>
+						</a>
+					</div>
+					
+					<div class="col-2">
+						<a href="https://github.com/carlawarde" target="_blank">
+							<div>
+								<i class="fab fa-github icon-big"></i>
+								<h4 class="social-name">Github</h4>
+							</div>
+						</a>
+					</div>
+					
+					<div class="col-2">
+						<a href="mailto:carlawarde30@gmail.com" target="_blank">
+							<div>
+								<i class="far fa-envelope icon-big"></i>
+								<h4 class="social-name">Email</h4>
+							</div>
+						</a>
+					</div>
+					
+					<div class="col-2">
+						<a href="https://www.freecodecamp.org/carlawarde" target="_blank">
+							<div>
+								<i class="fab fa-free-code-camp icon-big"></i>
+								<h4 class="social-name">FreeCodeCamp</h4>
+							</div>
+						</a>
+					</div>
+					
+					<div class="col-2">
+						<a href="https://codepen.io/Carla9859/" target="_blank">
+							<div>
+								<i class="fab fa-codepen icon-big"></i>
+								<h4 class="social-name">CodePen</h4>
+							</div>
+						</a>
+					</div>
+					<div class="col-1"></div>
+				</div>
+			</div>
+		</section>
+		
 		
 		<!-- Footer -->
 		<section id="footer">
-			<div class="flex-container-row-footer">
-				<div class="col-6">
-					<p>Written and programmed by Carla Warde</p>
-					<p>All rights reserved © 2019</p>
-				</div>
-				<div class="col-6">
-					<p id="version">V 1.05.1 2019-06-22</p>
+			<div class="container-fluid p-3">
+				<div class="row">
+					<div class="col-6">
+						<p>© Carla Warde 2019</p>
+					</div>
+					<div class="col-6 text-right">
+						<p>V2.0 since 2019-07-01</p>
+					</div>
 				</div>
 			</div>
 		</section>
 		
+		
 	</body>
-	
 </html>

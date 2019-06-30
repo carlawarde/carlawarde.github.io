@@ -1,0 +1,187 @@
+:root {
+	--amber: #f1c430;
+	--dark-amber: #d8ab17;
+	--stars-background: url(./images/stars-background.png);
+}
+
+/* default values */
+html {
+	margin: 0;
+	overflow-x: hidden;
+	font-size: 12px;
+	scroll-behavior: smooth;
+}
+p, li {font-family: 'Roboto Condensed', sans-serif;}
+h1, h2, h3, h4, h5 , h6, a {font-family: 'Cousine', monospace;}
+a {
+	text-decoration: none;
+	color: black;
+}
+hr { margin: 40px 10px 20px 10px;}
+* {box-sizing: border-box;}
+
+.amber-text {color: var(--amber); }
+
+/*Landing Page*/
+#landing-page {
+	top: 0;
+	color: white;
+	background: var(--stars-background) no-repeat top center fixed;
+	background-size: 100% 100%;
+	height: 94vh;
+}
+
+
+/* Star animation on landing page */
+.star {
+	z-index: 1;
+	background-color: white;
+	top: 10%;
+	left: -10px;
+	width: 2px;
+	height: 2px;
+	position: absolute;
+	animation-name: shootingstar;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+.star::before {
+	display: block;
+	position: absolute;
+	width: 400px;
+	background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
+}
+
+@keyframes shootingstar {
+	0% {
+		left: -10px;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+.s1{
+	animation-duration:10s;
+	animation-delay: 0.5s;
+}
+.s2 {
+	animation-duration: 12s;
+	top: 25%;
+	animation-delay: 1s;
+}
+.s3 {
+	animation-duration: 7s;
+	top: 47%;
+}
+.s4 {
+	top: 63%;
+	animation-duration: 5s;
+	animation-delay: 0.75s;
+}
+.s5 {
+	top: 80%;
+	animation-duration: 9s;
+	animation-delay: 3s;
+}
+
+
+/*navbar */
+nav {
+	height: 6vh;
+	background-color: black;
+}
+nav li a {
+	color: var(--dark-amber);
+	display: block;
+}
+nav li a:hover {
+	background-color: var(--dark-amber);
+	color: black;
+}
+
+/*about*/
+#about, #social {
+	background-color: var(--amber);
+}
+.section-title {
+	background-color: var(--dark-amber);
+	color: white;
+	font-weight: 900;
+	text-shadow: 1px 1px black;
+}
+.portrait {
+	border: 5px solid;
+	border-color: var(--dark-amber);
+}
+.portrait-div{width: 50%}
+#about a:hover {	
+	color: white;
+	text-shadow: 1px 1px black;
+}
+
+/*projects*/
+#projects {
+	background-image: var(--stars-background);
+	background-size: 100% 100%;
+	margin: 0;
+}
+.project-card {
+	width: 400px;
+	border: var(--dark-amber);
+	border-radius: 2px;
+	margin: 10px 0 10px 0;
+}
+#projects a, #intro a {text-decoration: none;}
+#projects a:hover, #intro a:hover {
+	color: white;
+	text-shadow: 1px 1px black;
+}
+.card-body {
+	background-color: var(--amber);
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+.card-title {background-color: var(--dark-amber);}
+.divider{background-color: var(--dark-amber);}
+.project-preview {
+	height: 250px;
+}
+
+
+/*social*/
+.icon-big { font-size: 30px;}
+.social-name {
+	font-size: 1em;
+	visibility: hidden;
+}
+#social a:hover {
+	text-decoration: none;
+	color: white;
+	text-shadow: 1px 1px black;
+}
+
+
+/*footer*/
+#footer {
+	background-color: black;
+	color: var(--dark-amber);
+}
+
+#intro {background-color: var(--amber);}
+
+/* media query for bootstrap md devices */
+@media screen and (min-width: 768px) {
+	html {font-size: 14px;}
+	.portrait-div{width: 75%}
+	.icon-big {font-size: 45px;}
+	.social-name{visibility: visible;}
+}
+
+/* media query for bootstrap lg and xl devices */
+@media screen and (min-width: 992px) {
+	html {font-size: 16px;}
+	.icon-big {font-size: 60px;}
+	.social-name{visibility: visible;}
+}
