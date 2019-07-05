@@ -88,6 +88,7 @@ hr { margin: 40px 10px 20px 10px;}
 
 /*navbar */
 nav {
+	max-height: 50px;
 	min-height: 32px;
 	height: 6vh;
 	background-color: black;
@@ -129,11 +130,11 @@ nav li a:hover {
 }
 .project-card {
 	max-width: 450px;
-	border: var(--dark-amber);
+	border-color: var(--dark-amber);
 	padding: 0;
 }
 #projects a, #intro a {text-decoration: none;}
-#projects a:hover, #intro a:hover {
+#projects a:hover, #intro a:hover, #projects-navbar a:hover {
 	color: white;
 	text-shadow: 1px 1px black;
 }
@@ -166,7 +167,17 @@ nav li a:hover {
 	color: var(--dark-amber);
 }
 
+/*projects page */
+#projects-navbar {
+	background-color: var(--dark-amber);
+	color: black;
+}
 #intro {background-color: var(--amber);}
+.divider {background-color: var(--dark-amber);}
+#projects-navbar li a {
+	color: black;
+	display: block;
+}
 
 /* media query for bootstrap md devices */
 @media screen and (min-width: 768px) {
