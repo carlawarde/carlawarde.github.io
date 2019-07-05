@@ -19,47 +19,24 @@
 			
 			$(document).ready(function(){	
 				/*
-					Checks if the device is less than 992px wide and changes the variable based on this
+					Checks if the device is less than 992px wide and sets the welcome section height. (This is to account for mobile browsers with UI that changes size)
 				*/
-				var mobile_or_tablet = false;
 				if($(window).width()< 992) {
-					mobile_or_tablet = true;
-				}
-				
-				/* 	
-					Function that locks the height of the landing page and navbar on mobile and tablet devices when the page initially loads. 
-					This is to stop a 'jump' when the user's browser UI changes the viewport height when the user scrolls.
-				*/
-				if(mobile_or_tablet) {
 					var vheight = $(window).height();
-					$("#navbar").height(vheight * 0.06);
 					vheight = vheight * 0.94;
-					$("#landing-page").height(vheight);
+					$("#welcome-section").height(vheight);
+					$("#navbar").height(vheight * 0.06);
 				}
 				
 				/*
 					This function handles when mobile/tablet users change their screen orientation so the landing page and navbar will resize accordingly.
 				*/
-				$(window).resize(function(){
-					if(mobile_or_tablet) {
-						var vheight = $(window).height();
-						$("#navbar").height(vheight * 0.06);
-						vheight = vheight * 0.94;
-						$("#landing-page").height(vheight);
-					}
+				$(window).on("orientationchange",function(event){
+					var vheight = $(window).height();
+					$("#navbar").height(vheight * 0.06);
+					vheight = vheight * 0.94;
+					$("#landing-page").height(vheight);
 				}
-				
-				/* 
-					smoothscroll function that is currently not working even though it worked before I started using bootstrap -_-
-				
-				$('.nav-link').click(function(event) {
-					var id = $(this).attr("href");
-					var offset = 80;
-					var target = $(id).offset().top - offset;
-					$('html, body').animate({scrollTop:target}, 400);
-
-					event.preventDefault();
-				}); */
 			});
 		</script>
 		
@@ -79,7 +56,7 @@
 				<div class="star s5"></div>
 			</div>
 		
-			<div class="text-center" style="padding: 38vh">
+			<div class="text-center" style="padding-top: 38vh;">
 				<h1>
 					Hi, I'm Carla Warde
 				</h1>
@@ -137,7 +114,7 @@
 							<p>
 								I am primarily based in Mayo/Limerick, but am willing to relocate. I will be undertaking a co-operative education 
 								placement from January 2020 to August 2020. Although I am a game development student, I am also very much interested in software engineering and a variety of roles that are
-								not restricted game development. If you're interested in taking on an intern during this period of time please do feel free to contact me if you wish to see my CV!
+								not restricted to game development. If you're interested in taking on an intern during this period of time please do feel free to contact me if you wish to see my CV!
 							</p>
 						</div>
 						
@@ -174,39 +151,33 @@
 		<!-- Projects -->
 		<section id="projects">
 			<h2 class="text-center section-title p-3">Projects</h2>
-			<div class="container-fluid p-3 text-center">
-				<div class="d-flex flex-wrap justify-content-md-between justify-content-sm-center">
+			<div class="container-fluid text-center p-3">
+				<div class="row justify-content-center">
 				
-					<div>
-						<div class="project-card card">
-							<img class="card-img-top project-preview" src="images/a_star_algorithm_preview.PNG" alt="project_preview">
-							<div class="card-body">
-								<h4 class="card-title p-1">A* Algorithm</h4>
-								<p class="card-text p-1">Utilised: Java, OOP, Heuristics, CLI</p>
-								<a href="https://github.com/carlawarde/projects/tree/master/java/a_star_algorithm" target="_blank" class="btn border border-dark project-btn stretched-link">See Code</a>
-							</div>
+					<div class="col-lg-4 col-md-6 project-card card m-3">
+						<img class="card-img-top project-preview" src="images/a_star_algorithm_preview.PNG" alt="project_preview">
+						<div class="card-body">
+							<h4 class="card-title p-1">A* Algorithm</h4>
+							<p class="card-text p-1">Utilised: Java, OOP, Heuristics, CLI</p>
+							<a href="https://github.com/carlawarde/projects/tree/master/java/a_star_algorithm" target="_blank" class="btn border border-dark stretched-link">See Code</a>
 						</div>
 					</div>
 					
-					<div>
-						<div class="project-card card">
-							<img class="card-img-top project-preview" src="images/vending_machine_project_preview.PNG" alt="project_preview">
-							<div class="card-body">
-								<h4 class="card-title p-1">Vending Machine App</h4>
-								<p class="card-text p-1">Utilised: Java, JavaFX, OOP, Text-File Manipulation, CLI</p>
-								<a href="https://github.com/carlawarde/projects/tree/master/java/vending_machine_project" target="_blank" class="btn border border-dark project-btn stretched-link">See Code</a>
-							</div>
+					<div class="col-lg-4 col-md-6 project-card card m-3">
+						<img class="card-img-top project-preview" src="images/vending_machine_project_preview.PNG" alt="project_preview">
+						<div class="card-body">
+							<h4 class="card-title p-1">Vending Machine App</h4>
+							<p class="card-text p-1">Utilised: Java, JavaFX, OOP, Text-File Manipulation, CLI</p>
+							<a href="https://github.com/carlawarde/projects/tree/master/java/vending_machine_project" target="_blank" class="btn border border-dark stretched-link">See Code</a>
 						</div>
 					</div>
 					
-					<div>
-						<div class="project-card card">
-							<img class="card-img-top project-preview" src="" alt="project_preview">
-							<div class="card-body">
-								<h4 class="card-title p-1">Other Projects</h4>
-								<p class="card-text p-1"><!--A more extensive list of my projects can be found here--> Coming soon!</p>
-								<a href="#projects" class="btn border-dark project-btn">See Code</a>
-							</div>
+					<div class="col-lg-4 col-md-6 project-card card m-3">
+						<img class="card-img-top project-preview" src="" alt="project_preview">
+						<div class="card-body">
+							<h4 class="card-title p-1">Other Projects</h4>
+							<p class="card-text p-1"><!--A more extensive list of my projects can be found here--> Coming soon!</p>
+							<a href="#projects" class="btn border-dark">See Code</a>
 						</div>
 					</div>
 					
@@ -219,7 +190,7 @@
 		<section id="social">
 			<h2 class="text-center section-title p-3">Social</h2>
 			<div class="container-fluid p-3 text-center">
-				<div class="row p-3 mx-auto">
+				<div class="row mx-auto">
 					<div class="col-1"></div>
 					<div class="col-2">
 						<a href="https://www.linkedin.com/in/carla-warde/" target="_blank">

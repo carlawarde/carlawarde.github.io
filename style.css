@@ -88,6 +88,7 @@ hr { margin: 40px 10px 20px 10px;}
 
 /*navbar */
 nav {
+	min-height: 32px;
 	height: 6vh;
 	background-color: black;
 }
@@ -127,10 +128,9 @@ nav li a:hover {
 	margin: 0;
 }
 .project-card {
-	width: 400px;
+	max-width: 450px;
 	border: var(--dark-amber);
-	border-radius: 2px;
-	margin: 10px 0 10px 0;
+	padding: 0;
 }
 #projects a, #intro a {text-decoration: none;}
 #projects a:hover, #intro a:hover {
@@ -144,10 +144,7 @@ nav li a:hover {
 	padding-right: 0;
 }
 .card-title {background-color: var(--dark-amber);}
-.divider{background-color: var(--dark-amber);}
-.project-preview {
-	height: 250px;
-}
+.project-preview {height: 250px;}
 
 
 /*social*/
