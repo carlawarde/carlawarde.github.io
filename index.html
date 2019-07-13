@@ -18,24 +18,12 @@
 		<script>
 			
 			$(document).ready(function(){
+				if($(window).width()< 768) {
+					$("#landing-page").height($(window).innerHeight());
+				}
 				
-				/*
-					Checks if the device is less than 992px wide and sets the welcome section height. This is to account for mobile and tablet browsers with UI that changes size
-					when you scroll.
-				
-				if($(window).width()< 992) {
-					var vheight = $(window).height();
-					vheight = vheight * 0.94;
-					$("#landing-page").height(vheight);
-				}*/
-				
-				/*
-					This function handles when mobile/tablet users change their screen orientation so the landing page and navbar will resize accordingly.
-				*/
 				$(window).on("orientationchange",function(event){
-					var vheight = $(window).height();
-					vheight = vheight * 0.94;
-					$("#landing-page").height(vheight);
+					$("#landing-page").height($(window).innerHeight());
 				}
 			});
 		</script>
@@ -44,7 +32,25 @@
 	
 	
 	<body>
-	
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand fixed-top">
+			<a class="navbar-brand" href="#">
+				<img src="images/favicon-32x32.png" alt="logo" style="width: 32px">
+			</a>
+			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#about">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#projects">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#social">Social</a>
+				</li>
+			</ul>
+		</nav>
+		
+		
 		<!-- Introduction -->
 		<section id="landing-page" class="container-fluid">
 		
@@ -66,25 +72,6 @@
 			</div>
 			
 		</section>
-		
-		
-		<!-- Navbar -->
-		<nav class="navbar navbar-expand sticky-top">
-			<a class="navbar-brand" href="#">
-				<img src="images/favicon-32x32.png" alt="logo" style="width: 32px">
-			</a>
-			<ul class="nav">
-				<li class="nav-item">
-					<a class="nav-link" href="#about">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#projects">Projects</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#social">Social</a>
-				</li>
-			</ul>
-		</nav>
 		
 		
 		<!-- About -->
@@ -129,7 +116,7 @@
 							</p>
 							<p>
 								<strong>FreeCodeCamp</strong><br>2018, Responsive Web Design Certificate
-								<a href="images/fcc-web-design-cert.png" target="_blank"><i class="fas fa-link"></i></a>
+								<a href="images/fcc-web-design-cert.PNG" target="_blank"><i class="fas fa-link"></i></a>
 							</p>
 						</div>
 						
@@ -159,7 +146,7 @@
 						<div class="card-body">
 							<h4 class="card-title p-1">A* Algorithm</h4>
 							<p class="card-text p-1">Utilised: Java, OOP, Heuristics, CLI</p>
-							<a href="https://github.com/carlawarde/projects/tree/master/java/a_star_algorithm" target="_blank" class="btn border border-dark stretched-link">See Code</a>
+							<a href="https://github.com/carlawarde/projects/tree/master/java/a_star_algorithm" target="_blank" class="btn border border-dark">See Code</a>
 						</div>
 					</div>
 					
@@ -168,7 +155,7 @@
 						<div class="card-body">
 							<h4 class="card-title p-1">Vending Machine App</h4>
 							<p class="card-text p-1">Utilised: Java, JavaFX, OOP, Text-File Manipulation, CLI</p>
-							<a href="https://github.com/carlawarde/projects/tree/master/java/vending_machine_project" target="_blank" class="btn border border-dark stretched-link">See Code</a>
+							<a href="https://github.com/carlawarde/projects/tree/master/java/vending_machine_project" target="_blank" class="btn border border-dark">See Code</a>
 						</div>
 					</div>
 					
@@ -177,7 +164,7 @@
 						<div class="card-body">
 							<h4 class="card-title p-1">Other Projects</h4>
 							<p class="card-text p-1">A more extensive list of my projects can be found here</p>
-							<a href="projects.html" class="btn border-dark">See Projects</a>
+							<a href="projects.html" class="btn border border-dark">See Projects</a>
 						</div>
 					</div>
 					
