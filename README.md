@@ -1,5 +1,5 @@
 <h2>Info:</h2>
-<p><b>Title: Personal Portfolio</b></p>
+<p><b>Title: </b>Personal Portfolio</p>
 <p><b>Description: </b>A website that contains all my latest projects and info</p>
 <p><b>Last Updated: </b>2019-07-18</p>
 <p><b>Author(s): </b>Carla Warde</p>
