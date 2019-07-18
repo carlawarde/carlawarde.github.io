@@ -26,7 +26,7 @@ hr { margin: 40px 10px 20px 10px;}
 #landing-page {
 	top: 0;
 	color: white;
-	background: var(--stars-background) no-repeat top center fixed;
+	background: var(--stars-background);
 	background-size: 100% 100%;
 }
 #landing-text {
