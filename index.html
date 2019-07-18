@@ -15,19 +15,6 @@
 		<link rel="stylesheet" href="style.css">
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
 		
-		<script>
-			
-			$(document).ready(function(){
-				if($(window).width()< 768) {
-					$("#landing-page").height($(window).innerHeight());
-				}
-				
-				$(window).on("orientationchange",function(event){
-					$("#landing-page").height($(window).innerHeight());
-				}
-			});
-		</script>
-		
 	</head>
 	
 	
@@ -61,8 +48,8 @@
 				<div class="star s4"></div>
 				<div class="star s5"></div>
 			</div>
-		
-			<div class="text-center" style="padding-top: 38vh;">
+			
+			<div class="text-center" id="landing-text">
 				<h1>
 					Hi, I'm Carla Warde
 				</h1>
@@ -237,7 +224,7 @@
 						<p>© Carla Warde 2019</p>
 					</div>
 					<div class="col-6 text-right">
-						<p>V2.1 since 2019-07-05</p>
+						<p>V2.12 since 2019-07-18</p>
 					</div>
 				</div>
 			</div>
