@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	
+
 		<title>Carla Warde</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Cousine|Roboto+Condensed&amp;subset=latin-ext" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
 		integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-		
+
 		<link rel="stylesheet" href="style.css">
 		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
-		
+
 	</head>
-	
-	
+
+
 	<body>
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand fixed-top">
@@ -36,11 +36,11 @@
 				</li>
 			</ul>
 		</nav>
-		
-		
+
+
 		<!-- Introduction -->
 		<section id="landing-page" class="container-fluid">
-		
+
 			<div>
 				<div class="star s1"></div>
 				<div class="star s2"></div>
@@ -48,7 +48,7 @@
 				<div class="star s4"></div>
 				<div class="star s5"></div>
 			</div>
-			
+
 			<div class="text-center" id="landing-text">
 				<h1>
 					Hi, I'm Carla Warde
@@ -57,10 +57,10 @@
 					a 3rd year computer games development student
 				</p>
 			</div>
-			
+
 		</section>
-		
-		
+
+
 		<!-- About -->
 		<section id="about">
 			<h2 class="text-center section-title p-3">About</h2>
@@ -71,34 +71,34 @@
 							<img src="./images/portrait.jpg" class="rounded-circle img-fluid portrait" alt="carla-warde-portrait">
 						</div>
 					</div>
-					
+
 					<div class="col-md-6 col-lg-8 p-3">
-					
+
 						<div class="p-1">
 							<h3>Who am I?</h3>
 							<p>
-								I'm a third year Computer Game Development student at the University of Limerick, Ireland. 
+								I'm a third year Computer Game Development student at the University of Limerick, Ireland.
 								I have had a love for gaming since I was small, and this has transitioned
 								into a passion for programming that took off in 2014.
 							</p>
 							<p>
-								Outside of programming and gaming, you can find me reading and sometimes even writing stories of my own! 
+								Outside of programming and gaming, you can find me reading and sometimes even writing stories of my own!
 								I also love kayaking and am a member of the kayaking club in my university.
 							</p>
 							<p>
-								I am primarily based in Mayo/Limerick, but am willing to relocate. I will be undertaking a co-operative education 
+								I am primarily based in Mayo/Limerick, but am willing to relocate. I will be undertaking a co-operative education
 								placement from January 2020 to August 2020. Although I am a game development student, I am also very much interested in software engineering and a variety of roles that are
 								not restricted to game development. If you're interested in taking on an intern during this period of time please do feel free to contact me if you wish to see my CV!
 							</p>
 						</div>
-						
+
 						<div class = "p-1">
 							<h3>Education</h3>
 							<p>
 								<strong>University of Limerick</strong> - Limerick, Ireland<br>2017-2021, BSc in Computer Games Development
 								<ul>
 									<li>Current Grade Level: First Class Honours</li>
-									<li>Key Subjects: Computer Science, Object Orientated Development, Algorithms & Data Structures, Event Driven Programming</li>
+									<li>Key Subjects: Computer Science, Object Orientated Development, Algorithms & Data Structures, Operating Systems</li>
 								</ul>
 							</p>
 							<p>
@@ -106,13 +106,13 @@
 								<a href="images/fcc-web-design-cert.PNG" target="_blank"><i class="fas fa-link"></i></a>
 							</p>
 						</div>
-						
+
 						<div class="p-1">
 							<h3>Technical Skills</h3>
 							<div>
 								<ul>
 									<li>Proficient: Java, HTML/CSS, Bootstrap</li>
-									<li>Familiar: Git, C++, C, MySQL</li>
+									<li>Familiar: Git, C++, MySQL, Python, Linux</li>
 								</ul>
 							</div>
 						</div>
@@ -120,14 +120,23 @@
 				</div>
 			</div>
 		</section>
-		
-		
+
+
 		<!-- Projects -->
 		<section id="projects">
 			<h2 class="text-center section-title p-3">Projects</h2>
 			<div class="container-fluid text-center p-3">
 				<div class="row justify-content-center">
-				
+
+          <div class="col-lg-4 col-md-6 project-card card m-3">
+						<img class="card-img-top project-preview" src="images/project_previews/blackjack_preview.png" alt="project_preview">
+						<div class="card-body">
+							<h4 class="card-title p-1">Blackjack</h4>
+							<p class="card-text p-1">Utilised: Python, OOP</p>
+							<a href="https://github.com/carlawarde/projects/tree/master/python/Blackjack" target="_blank" class="btn border border-dark">See Code</a>
+						</div>
+					</div>
+
 					<div class="col-lg-4 col-md-6 project-card card m-3">
 						<img class="card-img-top project-preview" src="images/project_previews/a_star_algorithm_preview.PNG" alt="project_preview">
 						<div class="card-body">
@@ -136,16 +145,7 @@
 							<a href="https://github.com/carlawarde/projects/tree/master/java/a_star_algorithm" target="_blank" class="btn border border-dark">See Code</a>
 						</div>
 					</div>
-					
-					<div class="col-lg-4 col-md-6 project-card card m-3">
-						<img class="card-img-top project-preview" src="images/project_previews/vending_machine_project_preview.PNG" alt="project_preview">
-						<div class="card-body">
-							<h4 class="card-title p-1">Vending Machine App</h4>
-							<p class="card-text p-1">Utilised: Java, JavaFX, OOP, Text-File Manipulation, CLI</p>
-							<a href="https://github.com/carlawarde/projects/tree/master/java/vending_machine_project" target="_blank" class="btn border border-dark">See Code</a>
-						</div>
-					</div>
-					
+
 					<div class="col-lg-4 col-md-6 project-card card m-3">
 						<img class="card-img-top project-preview" src="images/project_previews/projects_page.png" alt="project_preview">
 						<div class="card-body">
@@ -154,12 +154,12 @@
 							<a href="projects.html" class="btn border border-dark">See Projects</a>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</section>
-		
-		
+
+
 		<!-- Social -->
 		<section id="social">
 			<h2 class="text-center section-title p-3">Social</h2>
@@ -174,7 +174,7 @@
 							</div>
 						</a>
 					</div>
-					
+
 					<div class="col-2">
 						<a href="https://github.com/carlawarde" target="_blank">
 							<div>
@@ -183,7 +183,7 @@
 							</div>
 						</a>
 					</div>
-					
+
 					<div class="col-2">
 						<a href="mailto:carlawarde30@gmail.com" target="_blank">
 							<div>
@@ -192,7 +192,7 @@
 							</div>
 						</a>
 					</div>
-					
+
 					<div class="col-2">
 						<a href="https://www.freecodecamp.org/carlawarde" target="_blank">
 							<div>
@@ -201,7 +201,7 @@
 							</div>
 						</a>
 					</div>
-					
+
 					<div class="col-2">
 						<a href="https://codepen.io/Carla9859/" target="_blank">
 							<div>
@@ -214,8 +214,8 @@
 				</div>
 			</div>
 		</section>
-		
-		
+
+
 		<!-- Footer -->
 		<section id="footer">
 			<div class="container-fluid p-3">
@@ -224,12 +224,12 @@
 						<p>© Carla Warde 2019</p>
 					</div>
 					<div class="col-6 text-right">
-						<p>V2.12 since 2019-07-18</p>
+						<p>V2.14 since 2019-09-06</p>
 					</div>
 				</div>
 			</div>
 		</section>
-		
-		
+
+
 	</body>
 </html>
